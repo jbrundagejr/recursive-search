@@ -1,5 +1,12 @@
 function recursiveSearch(arr, target) {
-  // type your code here
+  // return false if given an empty array
+  if(arr.length === 0) return false
+  // compare first element of array to target. Return true if they are the same
+  if(arr[0] === target) return true
+  // if target doesn't match, remove the first element of the array
+  arr.shift()
+  // go through the process again
+  return recursiveSearch(arr, target)
 }
 
 if (require.main === module) {
